@@ -23,31 +23,31 @@ import component.JTextFiledMe;
 
 public class LoginJF extends JFrameMe implements JFAction{
 
-	public JLabel_B b = new JLabel_B("µÇÂ¼½çÃæ");//Ö÷Ìâ±êÇ©
-	public JLabelMe b_zh = new JLabelMe("ÕËºÅ:");
-	public JLabelMe b_pass = new JLabelMe("ÃÜÂë:");
+	public JLabel_B b = new JLabel_B("ç™»å½•ç•Œé¢");//ä¸»é¢˜æ ‡ç­¾
+	public JLabelMe b_zh = new JLabelMe("è´¦å·:");
+	public JLabelMe b_pass = new JLabelMe("å¯†ç :");
 	public JTextFiledMe t_zh = new JTextFiledMe();
 	public JPasswordField t_pass = new JPasswordField();
-	public JButtonMe btn_login = new JButtonMe("µÇÂ¼");
-	public JButtonMe btn_register = new JButtonMe("×¢²á");
-	public JButtonMe btn_return = new JButtonMe("¡ò");
+	public JButtonMe btn_login = new JButtonMe("ç™»å½•");
+	public JButtonMe btn_register = new JButtonMe("æ³¨å†Œ");
+	public JButtonMe btn_return = new JButtonMe("â—");
 	public String name;
 	
 	public LoginJF(String name){
 		this.name = name;
 		Dimension dim;
 		init();
-		if(name.equals("¹ÜÀíÔ±")){
+		if(name.equals("ç®¡ç†å‘˜")){
 			ImageIcon icon = new ImageIcon("image//103.png");
 			setIconImage(icon.getImage());
-			dim = setBack(new ImageIcon("image//¹ÜÀíÔ±.1.jpg"));
+			dim = setBack(new ImageIcon("image//ç®¡ç†å‘˜.1.jpg"));
 			b.setText("");
 		}else{
 			ImageIcon icon = new ImageIcon("image//102.png");
 			setIconImage(icon.getImage());
-			dim = setBack(new ImageIcon("image//ÓÃ»§µÇÂ¼2.1.jpg"));
+			dim = setBack(new ImageIcon("image//ç”¨æˆ·ç™»å½•2.1.jpg"));
 //			b.setSize(200, 100);
-			b.setText("ÓÃ»§µÇÂ¼");
+			b.setText("ç”¨æˆ·ç™»å½•");
 			b.setForeground(Color.BLACK);
 		}
 		
@@ -57,13 +57,13 @@ public class LoginJF extends JFrameMe implements JFAction{
 		
 		setSize(dim.width, dim.height);
 		setLocationRelativeTo(null);
-		setVisible(true);//·ÅÔÚ×îºó
+		setVisible(true);//æ”¾åœ¨æœ€å
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		new JFramText();     //×ø±ê´°Ìå
-//		LoginJF jf = new LoginJF("×Ô¼º");
+//		new JFramText();     //åæ ‡çª—ä½“
+//		LoginJF jf = new LoginJF("è‡ªå·±");
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class LoginJF extends JFrameMe implements JFAction{
 		// TODO Auto-generated method stub
 		try {
 			
-			if(name.equals("¹ÜÀíÔ±")){
+			if(name.equals("ç®¡ç†å‘˜")){
 				t_zh.setText("111");
 			}
 			
@@ -108,10 +108,10 @@ public class LoginJF extends JFrameMe implements JFAction{
 
 	@Override
 	public void setLocate() {
-//		int x = -50, y = -50;  //Î»ÖÃµÄ¿ØÖÆ
+//		int x = -50, y = -50;  //ä½ç½®çš„æ§åˆ¶
 		
 		int x = 400, y = 0;
-		if(name.equals("ÓÃ»§")){
+		if(name.equals("ç”¨æˆ·")){
 			x=410;y=70;
 			b_zh.setText("");
 //			b.setLocation(x, y);
@@ -133,11 +133,11 @@ public class LoginJF extends JFrameMe implements JFAction{
 		btn_login.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.blue));
 		btn_login.setLocation(x+170, y+250);
 		
-		if(name.equals("¹ÜÀíÔ±")){
+		if(name.equals("ç®¡ç†å‘˜")){
 			btn_register.setSize(0, 0);
 //			btnInstance.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.blue));
 			
-		}else if(name.equals("ÓÃ»§")){
+		}else if(name.equals("ç”¨æˆ·")){
 			
 			t_zh.setSize(150, 28);
 			t_pass.setSize(150, 28);
@@ -154,7 +154,7 @@ public class LoginJF extends JFrameMe implements JFAction{
 
 	@Override
 	public void addListener() {
-		// ·µ»Ø°´Å¥ÊÂ¼ş
+		// è¿”å›æŒ‰é’®äº‹ä»¶
 		btn_return.addActionListener(new ActionListener() {
 			
 			@Override
@@ -171,7 +171,7 @@ public class LoginJF extends JFrameMe implements JFAction{
 		});
 		
 		
-		//×¢²á°´Å¥ÊÂ¼ş
+		//æ³¨å†ŒæŒ‰é’®äº‹ä»¶
 		btn_register.addActionListener(new ActionListener() {
 			
 			@Override
@@ -182,24 +182,24 @@ public class LoginJF extends JFrameMe implements JFAction{
 			}
 		});
 		
-		//ÎªµÇÂ¼°´Å¥Ìí¼ÓÊÂ¼ş
+		//ä¸ºç™»å½•æŒ‰é’®æ·»åŠ äº‹ä»¶
 		btn_login.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				if(name.equals("×Ô¼º")){
+//				if(name.equals("è‡ªå·±")){
 //					dispose();
 //					new UserJF("111");
 //				}else 
-					if(name.equals("ÓÃ»§")){
+					if(name.equals("ç”¨æˆ·")){
 					
-					//ÅĞ¶ÏÊäÈë¿òÊÇ·ñÎª¿Õ
+					//åˆ¤æ–­è¾“å…¥æ¡†æ˜¯å¦ä¸ºç©º
 					if(t_zh.getText().length() == 0 || t_pass.getPassword().length == 0){
-						JOptionPane.showMessageDialog(null, "ÇëÊäÈëÓÃ»§ÃûºÍÃÜÂë","ÌáÊ¾¿ò", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "è¯·è¾“å…¥ç”¨æˆ·åå’Œå¯†ç ","æç¤ºæ¡†", JOptionPane.ERROR_MESSAGE);
 						
 					}else{
 						
-						//µÃµ½ÕËºÅºÍÃÜÂë
+						//å¾—åˆ°è´¦å·å’Œå¯†ç 
 						String userID = t_zh.getText();
 						String userPassword = new String(t_pass.getPassword());
 						
@@ -211,34 +211,34 @@ public class LoginJF extends JFrameMe implements JFAction{
 							e1.printStackTrace();
 						}
 						switch(i){
-						case 3:JOptionPane.showMessageDialog(null, "ÕËºÅ»òÃÜÂë´íÎó", "ÌáÊ¾¿ò", JOptionPane.ERROR_MESSAGE);
+						case 3:JOptionPane.showMessageDialog(null, "è´¦å·æˆ–å¯†ç é”™è¯¯", "æç¤ºæ¡†", JOptionPane.ERROR_MESSAGE);
 						break;
 						case 1:
-						JOptionPane.showMessageDialog(null, "µÇÂ¼³É¹¦", "ÌáÊ¾¿ò", JOptionPane.PLAIN_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ç™»å½•æˆåŠŸ", "æç¤ºæ¡†", JOptionPane.PLAIN_MESSAGE);
 						dispose();
 						new UserJF(t_zh.getText());
 						
 						break;
-						default :JOptionPane.showMessageDialog(null, "Î´Öª´íÎó", "ÌáÊ¾¿ò", JOptionPane.ERROR_MESSAGE);
+						default :JOptionPane.showMessageDialog(null, "æœªçŸ¥é”™è¯¯", "æç¤ºæ¡†", JOptionPane.ERROR_MESSAGE);
 						}
 						
 					}
 					
 					
-				}else if(name.equals("¹ÜÀíÔ±")){
-					//ÉèÖÃ¹ÜÀíÔ±ÕËºÅºÍÃÜÂë
-					//ÈôÊäÈëÎª¿ÕÔòÌáÊ¾
-					//²»Îª¿ÕÔòÏÔÊ¾ÕËºÅ»òÃÜÂë´íÎó
+				}else if(name.equals("ç®¡ç†å‘˜")){
+					//è®¾ç½®ç®¡ç†å‘˜è´¦å·å’Œå¯†ç 
+					//è‹¥è¾“å…¥ä¸ºç©ºåˆ™æç¤º
+					//ä¸ä¸ºç©ºåˆ™æ˜¾ç¤ºè´¦å·æˆ–å¯†ç é”™è¯¯
 					String zh = t_zh.getText();
 					String passstr = new String(t_pass.getPassword());
 					if(zh.length() == 0 || passstr.length() == 0){
-						JOptionPane.showMessageDialog(null, "ÇëÊäÈëÕËºÅºÍÃÜÂë", "ÌáÊ¾¿ò", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "è¯·è¾“å…¥è´¦å·å’Œå¯†ç ", "æç¤ºæ¡†", JOptionPane.ERROR_MESSAGE);
 					}else if(zh.equals("111")&&passstr.equals("111")){
-						JOptionPane.showMessageDialog(null, "µÇÂ¼³É¹¦", "ÌáÊ¾¿ò", JOptionPane.PLAIN_MESSAGE);
+						JOptionPane.showMessageDialog(null, "ç™»å½•æˆåŠŸ", "æç¤ºæ¡†", JOptionPane.PLAIN_MESSAGE);
 						dispose();
 						new ManagerJFA();
 					}else {
-						JOptionPane.showMessageDialog(null, "ÕËºÅ»òÃÜÂë´íÎó", "ÌáÊ¾¿ò", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "è´¦å·æˆ–å¯†ç é”™è¯¯", "æç¤ºæ¡†", JOptionPane.ERROR_MESSAGE);
 					}
 					
 					
@@ -252,3 +252,4 @@ public class LoginJF extends JFrameMe implements JFAction{
 	}
 
 }
+complet
